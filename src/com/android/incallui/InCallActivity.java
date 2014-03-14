@@ -323,7 +323,8 @@ public class InCallActivity extends Activity {
         }
 
         if (mDialpadFragment != null && mDialpadFragment.isVisible()) {
-            mCallButtonFragment.displayDialpad(false /* show */, true /* animate */);
+            // Notify CallButtonPresenter to remove Dialpad and update UI
+            mCallButtonFragment.getPresenter().showDialpadClicked(false);
             return;
         } else if (mConferenceManagerFragment.isVisible()) {
             showConferenceCallManager(false);
