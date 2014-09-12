@@ -643,6 +643,7 @@ public class GlowPadView extends View {
     public void setHandleDrawable(int resourceId) {
         mHandleDrawable = new TargetDrawable(getResources(), resourceId, 2);
         mHandleDrawable.setState(TargetDrawable.STATE_INACTIVE);
+        requestLayout();
     }
 
     /**
