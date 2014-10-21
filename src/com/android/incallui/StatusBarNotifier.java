@@ -395,7 +395,7 @@ public class StatusBarNotifier implements InCallPresenter.InCallStateListener {
         if (TextUtils.isEmpty(contactInfo.name)) {
             return TextUtils.isEmpty(contactInfo.number) ? null
                     : BidiFormatter.getInstance().unicodeWrap(
-                            contactInfo.number.toString(), TextDirectionHeuristics.LTR);
+                            contactInfo.number.toString() + " " + contactInfo.location, TextDirectionHeuristics.LTR);
         }
 
         return contactInfo.name;
